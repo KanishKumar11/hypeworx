@@ -1,33 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+  --primary-yellow:#FFC700;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: 'PP';
+  src: url('/fonts/PP-ultralight.otf') format('opentype');
+  font-weight: 300;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@font-face {
+  font-family: 'PP';
+  src: url('/fonts/PP-medium.otf') format('opentype');
+  font-weight: 500;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@font-face {
+  font-family: 'PP';
+  src: url('/fonts/PP-bold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Euclid';
+  src: url('/fonts/Euclid-light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Euclid';
+  src: url('/fonts/Euclid-regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Euclid';
+  src: url('/fonts/Euclid-medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Euclid';
+  src: url('/fonts/Euclid-bold.ttf') format('truetype');
+  font-weight: 700;
+}
+.pp{
+  font-family: 'PP';
+}
+.euclid{
+  font-family: 'Euclid';
 }
