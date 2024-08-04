@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "./ui/moving-border";
 import { motion } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({ dark }: { dark?: any }) => {
   const FADE_DOWN_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: -10 },
     show: { opacity: 1, y: 0, transition: { type: "spring" } },
@@ -24,7 +24,9 @@ const Navbar = () => {
           },
         },
       }}
-      className="bg-black text-white flex gap-5 justify-between items-center max-w-7xl mx-auto lg:px-20 px-8 py-5"
+      className={` ${
+        dark ? "text-black" : "text-white"
+      } flex gap-5 justify-between items-center w-full max-w-7xl mx-auto lg:px-20 px-8 py-5`}
     >
       <motion.div className="" variants={FADE_DOWN_ANIMATION_VARIANTS}>
         <Logo />
@@ -50,7 +52,9 @@ const Navbar = () => {
           {" "}
           <Button
             borderRadius="9999px"
-            className="bg-white dark:bg-slate-900 text-black dark:text-white  border-neutral-200 dark:border-slate-800"
+            className={`bg-white ${
+              dark ? "bg-slate-100" : "bg-slate-900"
+            } text-black dark:text-white  border-neutral-200 dark:border-slate-800`}
           >
             <div className="text-black bg-[var(--primary-yellow)] hover:bg-yellow-500 lg:px-10 px-6  lg:py-4 py-3 font-semibold rounded-full transition-colors ease-in-out hover:text-slate-800">
               Contact us
