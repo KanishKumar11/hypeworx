@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import SubHead from "../SubHead";
 import Image from "next/image";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery, useIsClient } from "@uidotdev/usehooks";
 
-export const StickyScroll = ({
+const StickyScroll = ({
   content,
   contentClassName,
 }: {
@@ -18,8 +18,7 @@ export const StickyScroll = ({
   }[];
   contentClassName?: string;
 }) => {
-  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
-
+  const [isSmallDevice, setIsSmallDevice] = useState<boolean>(false);
   const [activeCard, setActiveCard] = React.useState(0);
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
@@ -29,6 +28,13 @@ export const StickyScroll = ({
     offset: ["start center", "center start"],
   });
   const cardLength = isSmallDevice ? content.length - 1 : content.length - 1;
+
+  useEffect(() => {
+    const isSmall = window.matchMedia(
+      "only screen and (max-width: 768px)"
+    ).matches;
+    setIsSmallDevice(isSmall);
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
@@ -45,11 +51,6 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  // const backgroundColors = [
-  //   "var(--slate-900)",
-  //   "var(--black)",
-  //   "var(--neutral-900)",
-  // ];
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
     "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
@@ -66,10 +67,7 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      // animate={{
-      //   backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-      // }}
-      className=" overflow-y-auto overflow-x-hidden flex items-center flex-col justify-center relative space-x-10 rounded-md max-w-[1550px] p-10 lg:p-0"
+      className="overflow-y-auto overflow-x-hidden flex items-center flex-col justify-center relative space-x-10 rounded-md max-w-[1550px] p-10 lg:p-0"
       ref={ref}
     >
       <SubHead />
@@ -135,7 +133,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-lg text-black lg:text-4xl  max-w-2xl mt-10"
+                className="text-lg text-black lg:text-4xl max-w-2xl mt-10"
               >
                 {item.description}
               </motion.p>
@@ -147,3 +145,4 @@ export const StickyScroll = ({
     </motion.div>
   );
 };
+export default StickyScroll;
