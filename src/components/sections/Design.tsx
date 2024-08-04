@@ -9,7 +9,7 @@ const Design = () => {
   return (
     <div className="">
       <h2
-        className={`${poppins.className} text-[#DEE2E6] font-semibold text-balance lg:text-8xl text-4xl mb-40 text-center mx-auto `}
+        className={`${poppins.className} text-[#DEE2E6] font-semibold text-balance lg:text-8xl text-5xl mb-40 text-center mx-auto `}
       >
         Design Development Brand
       </h2>
