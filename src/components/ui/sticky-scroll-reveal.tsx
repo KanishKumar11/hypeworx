@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import SubHead from "../SubHead";
 import Image from "next/image";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 export const StickyScroll = ({
   content,
@@ -17,15 +18,17 @@ export const StickyScroll = ({
   }[];
   contentClassName?: string;
 }) => {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+
   const [activeCard, setActiveCard] = React.useState(0);
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
     target: ref,
     // container: ref,
-    offset: ["start start", "end start"],
+    offset: ["start center", "center start"],
   });
-  const cardLength = content.length + 1;
+  const cardLength = isSmallDevice ? content.length - 1 : content.length - 1;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
@@ -76,49 +79,49 @@ export const StickyScroll = ({
           alt=""
           width={130}
           height={80}
-          className="absolute left-[17%]"
+          className="absolute lg:left-[17%] left-[7%] w-[90px] lg:w-[130px] lg:top-0 top-28"
         />
         <Image
           src="/images/2.svg"
           alt=""
           width={250}
           height={200}
-          className="absolute -left-[3%] top-[20%] z-10"
+          className="absolute -left-[3%] lg:top-[20%] top-[20%] z-10 lg:w-[250px] w-[130px]"
         />
         <Image
           src="/images/3.svg"
           alt=""
           width={160}
           height={250}
-          className="absolute -left-[0%] bottom-[24%] z-10"
+          className="absolute lg:-left-[0%] lg:h-[250px] -left-10 h-[130px] bottom-[24%] z-10"
         />
         <Image
           src="/images/4.svg"
           alt=""
           width={180}
           height={150}
-          className="absolute left-[13%] bottom-[26%] z-0"
+          className="absolute lg:left-[13%] left-[0%] lg:w-[180px] w-[100px] lg:bottom-[26%] bottom-[35%]  z-0"
         />
         <Image
           src="/images/5.svg"
           alt=""
           width={150}
           height={150}
-          className="absolute right-[3%] top-[6%] z-0"
+          className="absolute lg:right-[3%] right-0 lg:w-[150px] w-[80px]   top-[6%] z-0"
         />
         <Image
           src="/images/6.svg"
           alt=""
           width={300}
           height={250}
-          className="absolute -right-[3%] top-[20%] z-0"
+          className="absolute -right-[3%] lg:w-[250px] w-[140px] top-[20%] z-0"
         />
         <Image
           src="/images/7.svg"
           alt=""
           width={300}
           height={250}
-          className="absolute -right-[3%] bottom-[26%] z-0"
+          className="absolute -right-[3%] lg:w-[300px] w-[140px] lg:bottom-[26%] bottom-[45%] z-0"
         />
       </div>
       <div className="div relative flex items-start px-4">
@@ -132,7 +135,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg text-black text-4xl max-w-2xl mt-10"
+                className="text-lg text-black lg:text-4xl  max-w-2xl mt-10"
               >
                 {item.description}
               </motion.p>

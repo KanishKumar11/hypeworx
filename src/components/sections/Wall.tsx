@@ -62,7 +62,7 @@ const Wall = () => {
         </svg>
         Wall of Love
       </div>
-      <div className="flex flex-row flex-wrap items-center justify-between gap-6">
+      <div className="grid lg:grid-cols-3 gap-5 md:grid-cols-2 grid-cols-1">
         {data.map((item, index) => (
           <motion.div
             initial={{ y: 100, opacity: 0 }}
@@ -70,7 +70,7 @@ const Wall = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 * index }}
             key={index}
-            className="w-[32%]"
+            className=" col-span-1"
           >
             {" "}
             <Testimonial data={item} key={index} />

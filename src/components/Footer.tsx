@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="bg-black text-white euclid">
       <div className="mx-auto max-w-7xl lg:px-20 py-10 px-8">
         <div className=" flex items-center justify-between">
-          <div className="flex gap-10">
+          <div className="flex gap-10 flex-row flex-wrap">
             <div className="flex flex-col gap-5 w-1/2">
               <h3 className="text-4xl text-[#E7E0F5]">Hypeworx</h3>
               <p>Advertising agency in Chennai, Tamil Nadu</p>
@@ -27,7 +27,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <Link href="#">
+          <Link href="#" className=" justify-self-start self-start">
             {" "}
             <div className="cursor-pointer">
               {" "}
@@ -48,7 +48,9 @@ const Footer = () => {
           </Link>
         </div>
         <div className="">
-          <div className="text-6xl text-center my-10">@Hypeworz </div>
+          <div className="lg:text-6xl text-4xl text-center my-10">
+            @Hypeworz{" "}
+          </div>
           <div className="flex items-center justify-center gap-10">
             <Link href="#">
               <Image src="/images/27.svg" alt="" width={50} height={50} />

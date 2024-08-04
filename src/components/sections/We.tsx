@@ -14,7 +14,7 @@ const CARDS = [
 const We = () => {
   return (
     <div className="euclid lg:px-20 px-8 mx-auto max-w-7xl flex flex-col items-center justify-center gap-10 my-20">
-      <h2 className="text-7xl">
+      <h2 className="lg:text-7xl text-4xl">
         We <span className="text-[#FF4100]">design</span>, develop & brand
       </h2>
       <p>
@@ -30,7 +30,7 @@ const We = () => {
           See works
         </button>
       </Link>
-      <div className="h-96 w-full">
+      <div className="h-40 lg:h-96 w-full">
         <CardStack items={CARDS} />
       </div>
     </div>

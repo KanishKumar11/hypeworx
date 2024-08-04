@@ -33,7 +33,7 @@ const Navbar = () => {
         variants={FADE_DOWN_ANIMATION_VARIANTS}
         className="flex gap-10 items-center"
       >
-        <div className="flex gap-10">
+        <div className="sm:flex hidden gap-10">
           <Link href="/work">
             {" "}
             <div className="hover:scale-105 transition-transform ease-in-out hover:-translate-y-1">
@@ -50,9 +50,9 @@ const Navbar = () => {
           {" "}
           <Button
             borderRadius="9999px"
-            className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+            className="bg-white dark:bg-slate-900 text-black dark:text-white  border-neutral-200 dark:border-slate-800"
           >
-            <div className="text-black bg-[var(--primary-yellow)] hover:bg-yellow-500 px-10 py-4 font-semibold rounded-full transition-colors ease-in-out hover:text-slate-800">
+            <div className="text-black bg-[var(--primary-yellow)] hover:bg-yellow-500 lg:px-10 px-6  lg:py-4 py-3 font-semibold rounded-full transition-colors ease-in-out hover:text-slate-800">
               Contact us
             </div>
           </Button>

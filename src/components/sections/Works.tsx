@@ -38,7 +38,7 @@ const Works = () => {
     >
       <SubHead />
       <div
-        className={`${poppins.className} font-medium text-lg flex gap-5 flex-row flex-wrap items-center justify-center`}
+        className={`${poppins.className} font-medium lg:text-lg text-[10px] flex lg:gap-5 gap-2 flex-row flex-wrap items-center justify-center`}
       >
         {Items.map((item, idx) => (
           <motion.div
@@ -46,7 +46,7 @@ const Works = () => {
             whileInView={{ y: 0, opacity: 100 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 * idx }}
-            className="bg-[#BBFEFB] text-[#012742] rounded-xl px-8 py-5"
+            className="bg-[#BBFEFB] sm:w-auto w-[45%] text-center text-[#012742] rounded-xl lg:px-8 px-4 lg:py-5 py-4"
             key={idx}
           >
             {item}
@@ -57,7 +57,7 @@ const Works = () => {
         className={`${poppins.className} max-w-3xl w-full mx-auto bg-[#F3F3F3] rounded-xl py-4 px-10 flex gap-5 items-center justify-between`}
       >
         {" "}
-        <div className="text-[#050401] text-xl font-medium">
+        <div className="text-[#050401] lg:text-xl text-base font-medium">
           Know us what you wanna build
         </div>{" "}
         <div className="">
@@ -96,7 +96,7 @@ const Works = () => {
           </motion.div>
         ))}
       </div>
-      <div className="bg-black text-[var(--primary-yellow)] w-full text-9xl rounded-full px-20 text-center py-16">
+      <div className="bg-black text-[var(--primary-yellow)] w-full lg:text-9xl text-5xl rounded-full lg:px-20 px-10 text-center lg:py-16 py-10">
         Explore works
       </div>
     </div>
