@@ -1,12 +1,13 @@
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 const design = ["/images/37.svg", "/images/38.svg", "/images/39.svg"];
 const Services = () => {
   return (
-    <div className="p-8">
+    <div className="p-8 flex flex-col gap-y-28">
       <div className="flex flex-col gap-5 relative">
         <h1 className="lg:text-9xl text-6xl font-light pp">Design</h1>
 
@@ -19,9 +20,11 @@ const Services = () => {
           experience and drive business success. Trust Hypework to bring your
           vision to life with creativity and precision.
         </p>
-        <div className="text-white px-10 py-4 bg-black rounded-xl font-bold w-max mb-10">
-          Explore works
-        </div>
+        <Link href="/works">
+          <div className="text-white px-10 py-4 bg-black rounded-xl font-bold w-max mb-10">
+            Explore works
+          </div>
+        </Link>
         <div className="h-96 relative">
           <InfiniteMovingCards direction="left" speed="slow" items={design} />
           <div className="">
@@ -67,9 +70,11 @@ const Services = () => {
           experience and drive business success. Trust Hypework to bring your
           vision to life with creativity and precision.
         </p>
-        <div className="text-white px-10 py-4 bg-black rounded-xl font-bold w-max mb-10">
-          Explore works
-        </div>
+        <Link href="/works">
+          <div className="text-white px-10 py-4 bg-black rounded-xl font-bold w-max mb-10">
+            Explore works
+          </div>
+        </Link>
         <div className="h-96 relative">
           <InfiniteMovingCards direction="left" speed="slow" items={design} />
           <div className="">
@@ -109,9 +114,11 @@ const Services = () => {
           experience and drive business success. Trust Hypework to bring your
           vision to life with creativity and precision.
         </p>
-        <div className="text-white px-10 py-4 bg-black rounded-xl font-bold w-max mb-10">
-          Explore works
-        </div>
+        <Link href="/works">
+          <div className="text-white px-10 py-4 bg-black rounded-xl font-bold w-max mb-10">
+            Explore works
+          </div>
+        </Link>
         <div className="h-96 relative">
           <InfiniteMovingCards direction="left" speed="slow" items={design} />
           <div className="">

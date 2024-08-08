@@ -17,7 +17,14 @@ const page = () => {
   return (
     <>
       <Navbar dark={true} />
-      <div className="lg:px-20 px-8 mx-auto max-w-7xl flex flex-col gap-10 euclid">
+      <div className="lg:px-20 px-8 relative mx-auto max-w-7xl flex flex-col gap-10 euclid">
+        <Image
+          src="/images/41.svg"
+          width={100}
+          height={70}
+          alt=""
+          className="absolute lg:right-10 left-48 -top-7 lg:left-auto"
+        />
         <motion.h1
           className="pp text-black font-medium lg:text-7xl  text-4xl  text-balance  w-auto mt-12 "
           initial="hidden"
@@ -130,6 +137,22 @@ const page = () => {
               <div>www.sculptgen.com</div>
             </div>
           </div>
+          <div className="w-full lg:hidden flex flex-row gap-5">
+            <Image
+              src="/images/31.svg"
+              alt=""
+              width={1000}
+              height={1000}
+              className="w-1/2"
+            />
+            <Image
+              src="/images/31.svg"
+              alt=""
+              width={1000}
+              height={1000}
+              className="w-1/2"
+            />
+          </div>
           <div className="min-w-[60%]">
             <Image src="/images/31.svg" alt="" width={1000} height={1000} />
           </div>
@@ -183,6 +206,22 @@ const page = () => {
               </svg>
               <div>www.sculptgen.com</div>
             </div>
+          </div>
+          <div className="w-full lg:hidden flex flex-row gap-5">
+            <Image
+              src="/images/31.svg"
+              alt=""
+              width={1000}
+              height={1000}
+              className="w-1/2"
+            />
+            <Image
+              src="/images/31.svg"
+              alt=""
+              width={1000}
+              height={1000}
+              className="w-1/2"
+            />
           </div>
           <div className="min-w-[60%]">
             <Image src="/images/31.svg" alt="" width={1000} height={1000} />

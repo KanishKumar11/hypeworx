@@ -25,7 +25,7 @@ const We = () => {
         intuitive and aesthetically pleasing designs that enhance user
         experience and drive business success.
       </p>
-      <Link href="">
+      <Link href="/works">
         <button className="px-10 text-[var(--primary-yellow)] bg-black rounded-full py-6">
           See works
         </button>

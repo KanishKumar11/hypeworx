@@ -6,6 +6,7 @@ import Clients from "@/components/sections/Clients";
 import Design from "@/components/sections/Design";
 import Develop from "@/components/sections/Develop";
 import Hero from "@/components/sections/Hero";
+import HorizontalScroll from "@/components/sections/HorizontalScroll";
 import Rotated from "@/components/sections/Rotated";
 import { StickyScrollAnimation } from "@/components/sections/StickyScrollAnimation";
 import Wall from "@/components/sections/Wall";
@@ -27,9 +28,7 @@ const page = () => {
       </div>{" "}
       <StickyScrollAnimation />
       <Design />
-      <We />
-      <Develop />
-      <Brand />
+      <HorizontalScroll />
       <Clients />
       <Works />
       <Wall />

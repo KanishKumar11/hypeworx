@@ -63,6 +63,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+        <div className="mt-10">&copy; 2024 All rights reserved.</div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ const Develop = () => {
         initial planning to final deployment, we deliver high-quality, scalable,
         and efficient solutions that drive business growth.
       </p>
-      <Link href="">
+      <Link href="/works">
         <button className="px-10 text-[var(--primary-yellow)] bg-black rounded-full py-6">
           See works
         </button>

@@ -1,11 +1,11 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/sections/about/Hero";
-import StickyScroll from "@/components/sections/about/StickyScroll";
+import Hero from "@/components/sections/our-works/Hero";
+import StickyScroll from "@/components/sections/our-works/StickyScroll";
 import React from "react";
 import { content } from "@/lib/data";
-import Services from "@/components/sections/about/Services";
-import Description from "@/components/sections/about/Description";
+import Services from "@/components/sections/our-works/Services";
+import Description from "@/components/sections/our-works/Description";
 const page = () => {
   return (
     <>

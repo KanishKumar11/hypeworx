@@ -14,7 +14,7 @@ const Clients = () => {
         height="40"
         className="h-12"
       />
-      <div className="bg-[#74B8FB] text-[#021F3B] px-6 py-16 -rotate-6 lg:-mt-20 rounded-sm lg:w-72 w-64 euclid text-sm self-start">
+      <div className="bg-[#74B8FB] text-[#021F3B] sm:px-6 py-16 -rotate-6 lg:-mt-20 rounded-sm sm:w-72 w-[70vw] max-sm:mx-auto px-10 euclid text-sm self-start">
         “Our Vision is to provide participants with comprehensive guidance and
         support throughout their job search journey, and to enhance
         participants’ employability by improving their job search skills,

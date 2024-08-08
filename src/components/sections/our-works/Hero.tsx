@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SubHead from "@/components/SubHead";
+import Link from "next/link";
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
 const Hero = () => {
@@ -43,9 +44,11 @@ const Hero = () => {
           </motion.span>
         ))}
       </motion.h2>
-      <div className="bg-white px-10 py-4 text-black rounded-xl font-bold">
-        Explore works
-      </div>
+      <Link href="/works">
+        <div className="bg-white px-10 py-4 text-black rounded-xl font-bold">
+          Explore works
+        </div>
+      </Link>
       <div className="overflow-hidden z-0">
         <Image
           src="/images/33.svg"

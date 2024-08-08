@@ -67,7 +67,7 @@ const StickyScroll = ({
 
   return (
     <motion.div
-      className="overflow-y-auto overflow-x-hidden flex items-center flex-col justify-center relative space-x-10 rounded-md max-w-[1550px] p-10 lg:p-0"
+      className="overflow-y-auto overflow-x-hidden flex items-center flex-col justify-center relative space-x-10 rounded-md max-w-[1550px] p-10 lg:p-0 "
       ref={ref}
     >
       <SubHead />

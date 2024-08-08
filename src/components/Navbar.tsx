@@ -4,6 +4,15 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { Button } from "./ui/moving-border";
 import { motion } from "framer-motion";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Navbar = ({ dark }: { dark?: any }) => {
   const FADE_DOWN_ANIMATION_VARIANTS = {
@@ -33,10 +42,10 @@ const Navbar = ({ dark }: { dark?: any }) => {
       </motion.div>
       <motion.div
         variants={FADE_DOWN_ANIMATION_VARIANTS}
-        className="flex gap-10 items-center"
+        className="flex sm:gap-10 gap-2 items-center"
       >
         <div className="sm:flex hidden gap-10">
-          <Link href="/work">
+          <Link href="/our-works">
             {" "}
             <div className="hover:scale-105 transition-transform ease-in-out hover:-translate-y-1">
               Work
@@ -61,6 +70,33 @@ const Navbar = ({ dark }: { dark?: any }) => {
             </div>
           </Button>
         </Link>
+        <div className="sm:hidden block">
+          <Sheet>
+            <SheetTrigger>
+              {" "}
+              <Menu />
+            </SheetTrigger>
+            <SheetContent className=" bg-slate-100 border-l-0">
+              <SheetHeader>
+                <SheetDescription className="py-10">
+                  <div className="flex flex-col justify-start items-start text-xl  text-neutral-900 gap-10">
+                    <Link href="/our-works">
+                      {" "}
+                      <div className="hover:scale-105 transition-transform ease-in-out hover:-translate-y-1">
+                        Work
+                      </div>
+                    </Link>
+                    <Link href="/about">
+                      <div className="hover:scale-105 transition-transform ease-in-out hover:-translate-y-1">
+                        About
+                      </div>
+                    </Link>
+                  </div>
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
+        </div>
       </motion.div>
     </motion.div>
   );

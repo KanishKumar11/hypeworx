@@ -26,7 +26,7 @@ const Brand = () => {
         impactful branding that resonates with the target audience and
         strengthens brand presence.
       </p>
-      <Link href="">
+      <Link href="/works">
         <button className="px-10 text-[var(--primary-yellow)] bg-black rounded-full py-6">
           See works
         </button>

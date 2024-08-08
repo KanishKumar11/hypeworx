@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import React from "react";
 import Testimonial from "../cards/Testimonial";
 import { motion } from "framer-motion";
+import { InfiniteMovingTestimonials } from "../ui/infinite-moving-testimonials";
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 const data = [
   {
@@ -62,7 +63,7 @@ const Wall = () => {
         </svg>
         Wall of Love
       </div>
-      <div className="grid lg:grid-cols-3 gap-5 md:grid-cols-2 grid-cols-1">
+      {/* <div className="grid lg:grid-cols-3 gap-5 md:grid-cols-2 grid-cols-1">
         {data.map((item, index) => (
           <motion.div
             initial={{ y: 100, opacity: 0 }}
@@ -76,7 +77,9 @@ const Wall = () => {
             <Testimonial data={item} key={index} />
           </motion.div>
         ))}
-      </div>
+      </div> */}
+      <InfiniteMovingTestimonials items={data} />
+      <InfiniteMovingTestimonials direction="right" items={data} />
     </div>
   );
 };

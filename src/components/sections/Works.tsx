@@ -4,6 +4,7 @@ import SubHead from "../headings/SubHead2";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const Items = [
   "UI/UX Design",
   "Graphic Design",
@@ -19,6 +20,16 @@ const Items = [
   "E-commerce Solutions",
   "Content Creation",
   "Product Prototyping",
+];
+const mobItems = [
+  "UI/UX Design",
+  "Graphic Design",
+  "Brand Strategy",
+  "Product Prototyping",
+  "Social Media Management",
+  "Logo",
+  "Visual Branding",
+  "Social Media",
 ];
 const images = [
   "/images/13.svg",
@@ -38,7 +49,7 @@ const Works = () => {
     >
       <SubHead />
       <div
-        className={`${poppins.className} font-medium lg:text-lg text-[10px] flex lg:gap-5 gap-2 flex-row flex-wrap items-center justify-center`}
+        className={`${poppins.className} font-medium lg:text-lg text-[10px] lg:flex hidden lg:gap-5 gap-2 flex-row flex-wrap items-center justify-center`}
       >
         {Items.map((item, idx) => (
           <motion.div
@@ -47,6 +58,22 @@ const Works = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 * idx }}
             className="bg-[#BBFEFB] sm:w-auto w-[45%] text-center text-[#012742] rounded-xl lg:px-8 px-4 lg:py-5 py-4"
+            key={idx}
+          >
+            {item}
+          </motion.div>
+        ))}
+      </div>
+      <div
+        className={`${poppins.className} font-medium lg:text-lg text-[10px] flex lg:hidden lg:gap-5 gap-2 flex-row flex-wrap items-center justify-center`}
+      >
+        {mobItems.map((item, idx) => (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 100 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 * idx }}
+            className="bg-[#BBFEFB] sm:w-auto text-center text-[#012742] rounded-xl lg:px-8 px-7 lg:py-5 py-3"
             key={idx}
           >
             {item}
@@ -96,9 +123,11 @@ const Works = () => {
           </motion.div>
         ))}
       </div>
-      <div className="bg-black text-[var(--primary-yellow)] w-full lg:text-9xl text-5xl rounded-full lg:px-20 px-10 text-center lg:py-16 py-10">
-        Explore works
-      </div>
+      <Link href="/works">
+        <div className="bg-black text-[var(--primary-yellow)] w-full lg:text-9xl text-5xl rounded-full lg:px-20 px-10 text-center lg:py-16 py-10">
+          Explore works
+        </div>
+      </Link>
     </div>
   );
 };

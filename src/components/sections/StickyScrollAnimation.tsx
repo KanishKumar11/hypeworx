@@ -43,7 +43,7 @@ const content = [
 ];
 export function StickyScrollAnimation() {
   return (
-    <div className="py-16">
+    <div className="py-16 my-10">
       <StickyScroll content={content} />
     </div>
   );
