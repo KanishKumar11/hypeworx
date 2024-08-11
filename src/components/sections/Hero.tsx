@@ -17,7 +17,7 @@ const Hero = () => {
   const headingWords = heading.split(" ");
   const subHeadingWords = subHeading.split(" ");
   return (
-    <div className="mx-auto my-10 p-5 max-w-7xl flex flex-col items-center  justify-center gap-5 text-center">
+    <div className="mx-auto xl:my-10 p-5 max-w-7xl flex flex-col items-center  justify-center gap-5 text-center">
       <SubHead />
       <motion.h1
         className="pp text-white font-light lg:text-7xl  text-[28px] leading-[34px] text-balance mx-auto w-auto mt-12"

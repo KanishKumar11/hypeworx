@@ -24,7 +24,7 @@ const SubHead = () => {
       }}
     >
       <motion.div
-        className="rounded-full mx-auto w-max bg-[var(--primary-yellow)] px-5 py-2 flex flex-row gap-5 items-center justify-center text-lg font-normal"
+        className="rounded-full mx-auto w-max bg-[var(--primary-yellow)] px-5 py-2 flex flex-row gap-3 items-center justify-center text-base font-normal"
         variants={FADE_UP_ANIMATION_VARIANTS}
       >
         <motion.svg
