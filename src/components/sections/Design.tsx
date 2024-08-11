@@ -7,9 +7,9 @@ const poppins = Poppins({
 
 const Design = () => {
   return (
-    <div className="">
+    <div className="overflow-x-clip">
       <h2
-        className={`${poppins.className} text-[#DEE2E6] font-semibold text-balance lg:text-8xl text-5xl mb-40 text-center mx-auto `}
+        className={`${poppins.className} -translate-x-20  text-[#DEE2E6] font-semibold text-nowrap max-w-[100vw] s lg:text-balance lg:text-8xl text-5xl mb-40 text-center mx-auto `}
       >
         Design Development Brand
       </h2>

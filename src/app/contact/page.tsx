@@ -21,27 +21,87 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { color } from "framer-motion";
+import { Textarea } from "@/components/ui/textarea";
+import { PhoneInput } from "@/components/ui/phone-input";
+import { isValidPhoneNumber } from "react-phone-number-input";
 const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ["latin"] });
 const upper = [
-  "Custom Software Development",
-  "Brand Strategy",
-  "Logo Design",
-  "Brand Collateral",
+  {
+    text: "Custom Software Development",
+    color: "#008022",
+  },
+  {
+    text: "Brand Strategy",
+    color: "#E23336",
+  },
+  {
+    text: "Logo Design",
+    color: "#E23336",
+  },
+  {
+    text: "Brand Collateral",
+    color: "#008022",
+  },
 ];
 const lower = [
-  "Digital Marketing",
-  "Social Media Management",
-  "E-commerce Solutions",
-  "Content Creation",
-  "Product Prototyping",
+  {
+    text: "Digital Marketing",
+    color: "#008022",
+  },
+  {
+    text: "Social Media Management",
+    color: "#545DC5",
+  },
+  {
+    text: "E-commerce Solutions",
+    color: "#CA12C5",
+  },
+  {
+    text: "Content Creation",
+    color: "#545DC5",
+  },
+  {
+    text: "Product Prototyping",
+    color: "#CA12C5",
+  },
+];
+const mUpper = [
+  {
+    text: "Product Prototyping",
+    color: "#008022",
+  },
+  {
+    text: "E-commerce Solutions",
+    color: "#1649FF",
+  },
+];
+const mLower = [
+  {
+    text: "UI/UX Design",
+    color: "#FF4100",
+  },
+  {
+    text: "Graphic Design",
+    color: "#008022",
+  },
+  {
+    text: "Brand Strategy",
+    color: "#FF4100",
+  },
 ];
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
-  phoneNumber: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
+  phoneNumber: z
+    .string()
+    .min(7, {
+      message: "Invalid phone number",
+    })
+    .refine(isValidPhoneNumber, { message: "Invalid phone number" }),
+  email: z.string().email(),
+  message: z.string().optional(),
 });
 
 const Page = () => {
@@ -58,40 +118,69 @@ const Page = () => {
   return (
     <div className="bg-[#F1F0F0]">
       <Navbar dark />
-      <div className="max-w-7xl my-10 bg-[#F1F0F0] mx-auto flex-col flex gap-10">
-        <div className="flex flex-row gap-5 flex-wrap items-center justify-center">
+      <div className="max-w-7xl my-10 bg-[#F1F0F0] mx-auto flex-col flex gap-10 relative">
+        <div className="absolute lg:block hidden top-1/2 -left-14 -rotate-12 euclid text-[#4C4837] bg-[#EEE1AA] py-10 px-5 max-w-[300px]">
+          “Our Vision is to provide participants with comprehensive guidance and
+          support throughout their job search journey, and to enhance
+          participants’ employability by improving their job search skills,
+          interview techniques, and resume writing abilities
+        </div>
+        <div className=" lg:flex hidden flex-row gap-5 flex-wrap items-center justify-center">
           {" "}
           {upper.map((item) => (
-            <Tag key={item}>{item}</Tag>
+            <Tag key={item.text} color={item.color}>
+              {item.text}
+            </Tag>
           ))}
         </div>
-        <h2 className="euclid text-8xl text-center text-[#050505]">
+        <div className="flex lg:hidden flex-row gap-5 flex-wrap items-center justify-center">
+          {" "}
+          {mUpper.map((item) => (
+            <Tag key={item.text} color={item.color}>
+              {item.text}
+            </Tag>
+          ))}
+        </div>
+        <h2 className="euclid lg:text-8xl text-6xl text-balance text-center text-[#050505]">
           You name it, we deliver{" "}
         </h2>
-        <div className="flex flex-row gap-5 flex-wrap items-center justify-center">
+        <div className="lg:flex hidden flex-row gap-5 flex-wrap items-center justify-center">
           {" "}
           {lower.map((item) => (
-            <Tag key={item}>{item}</Tag>
+            <Tag key={item.text} color={item.color}>
+              {item.text}
+            </Tag>
           ))}
         </div>
-        <div className="bg-white py-10 px-10 gap-5 flex flex-col text-center ">
+        <div className="flex lg:hidden flex-row gap-5 flex-wrap items-center justify-center">
+          {" "}
+          {mLower.map((item) => (
+            <Tag key={item.text} color={item.color}>
+              {item.text}
+            </Tag>
+          ))}
+        </div>
+        <div className="bg-white mx-4 rounded-2xl py-10 px-10 gap-5 flex flex-col text-center max-w-[700px] lg:mx-auto">
           <h2 className="text-4xl euclid text-center">Contact us</h2>
-          <p className={cn(poppins.className, "text-xl")}>
+          <p className={cn(poppins.className, "text-lg")}>
             Whether you have a project in mind, questions about our services, or
             just want to say hello, our team is ready to connect.{" "}
           </p>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <div className="flex gap-5 items-start">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-8 flex flex-col  justify-center"
+            >
+              <div className="flex w-full lg:flex-row flex-col gap-5 lg:items-center justify-center">
                 {" "}
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col items-start gap-2">
+                    <FormItem className="flex flex-1 flex-col items-start gap-2">
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="shadcn" {...field} />
+                        <Input placeholder="Sampreet Kulkani" {...field} />
                       </FormControl>
 
                       <FormMessage />
@@ -102,10 +191,14 @@ const Page = () => {
                   control={form.control}
                   name="phoneNumber"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col items-start gap-2">
-                      <FormLabel>Username</FormLabel>
+                    <FormItem className="flex flex-1 flex-col items-start gap-2">
+                      <FormLabel>Phone number</FormLabel>
                       <FormControl>
-                        <Input placeholder="shadcn" {...field} />
+                        <PhoneInput
+                          defaultCountry="IN"
+                          placeholder="8329987573"
+                          {...field}
+                        />
                       </FormControl>
 
                       <FormMessage />
@@ -115,37 +208,38 @@ const Page = () => {
               </div>
               <FormField
                 control={form.control}
-                name="name"
+                name="email"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex flex-1 flex-col items-start gap-2">
+                    {" "}
                     <FormLabel>Username</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} />
+                      <Input
+                        placeholder="kulkarnisampreet9@gmail.com"
+                        {...field}
+                      />
                     </FormControl>
-                    <FormDescription>
-                      This is your public display name.
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
               <FormField
                 control={form.control}
-                name="name"
+                name="message"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Username</FormLabel>
+                  <FormItem className="flex flex-1 flex-col items-start gap-2">
+                    {" "}
+                    <FormLabel>Message</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} />
+                      <Textarea placeholder="shadcn" {...field} />
                     </FormControl>
-                    <FormDescription>
-                      This is your public display name.
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit">Submit</Button>
+              <Button type="submit" className="w-full text-[#FFC700]">
+                Submit
+              </Button>
             </form>
           </Form>
         </div>
@@ -154,12 +248,13 @@ const Page = () => {
     </div>
   );
 };
-const Tag = ({ children }: any) => (
+const Tag = ({ color, children }: any) => (
   <div
     className={cn(
       poppins.className,
-      "px-8 text-[#012742] rounded-md font-semibold bg-white py-4 border"
+      "lg:px-8 px-4 text-[#012742] rounded-xl lg:font-semibold bg-white lg:text-base text-sm lg:py-4 py-3 border"
     )}
+    style={{ color }}
   >
     {children}
   </div>
