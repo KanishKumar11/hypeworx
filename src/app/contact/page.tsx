@@ -115,7 +115,7 @@ const Page = () => {
               </div>
               <FormField
                 control={form.control}
-                name="username"
+                name="name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Username</FormLabel>
@@ -131,7 +131,7 @@ const Page = () => {
               />
               <FormField
                 control={form.control}
-                name="username"
+                name="name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Username</FormLabel>
