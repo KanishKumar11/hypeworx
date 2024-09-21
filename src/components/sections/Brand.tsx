@@ -19,7 +19,7 @@ const Brand = () => {
         We design, develop & <span className="text-[#B50DDF]">brand</span>
       </h2>
       <p>
-        In the realm of branding, Hypework excels in building strong, memorable
+        In the realm of branding, Hypeworx excels in building strong, memorable
         brand identities. Our services include brand strategy, logo design, and
         brand collateral, ensuring every element aligns with the brand&#39;s
         vision and values. From concept to execution, we create cohesive and

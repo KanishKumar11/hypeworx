@@ -12,12 +12,12 @@ const Services = () => {
         <h1 className="lg:text-9xl text-6xl font-light pp">Design</h1>
 
         <p className={`${poppins.className} lg:text-2xl text-lg`}>
-          At Hypework, we specialize in creating visually stunning, user-centric
+          At Hypeworx, we specialize in creating visually stunning, user-centric
           designs. Our services include UI/UX design, graphic design, and visual
           branding, ensuring every touchpoint reflects your brand&#39;s essence.
           From concept to execution, our designers craft intuitive,
           aesthetically pleasing, and functional designs that enhance user
-          experience and drive business success. Trust Hypework to bring your
+          experience and drive business success. Trust Hypeworx to bring your
           vision to life with creativity and precision.
         </p>
         <Link href="/works">
@@ -62,12 +62,12 @@ const Services = () => {
         <h1 className="lg:text-9xl text-6xl font-light pp">Development</h1>
 
         <p className={`${poppins.className} lg:text-2xl text-lg`}>
-          At Hypework, we specialize in creating visually stunning, user-centric
+          At Hypeworx, we specialize in creating visually stunning, user-centric
           designs. Our services include UI/UX design, graphic design, and visual
           branding, ensuring every touchpoint reflects your brand&#39;s essence.
           From concept to execution, our designers craft intuitive,
           aesthetically pleasing, and functional designs that enhance user
-          experience and drive business success. Trust Hypework to bring your
+          experience and drive business success. Trust Hypeworx to bring your
           vision to life with creativity and precision.
         </p>
         <Link href="/works">
@@ -106,12 +106,12 @@ const Services = () => {
         <h1 className="lg:text-9xl text-6xl font-light pp">Branding</h1>
 
         <p className={`${poppins.className} lg:text-2xl text-lg`}>
-          At Hypework, we specialize in creating visually stunning, user-centric
+          At Hypeworx, we specialize in creating visually stunning, user-centric
           designs. Our services include UI/UX design, graphic design, and visual
           branding, ensuring every touchpoint reflects your brand&#39;s essence.
           From concept to execution, our designers craft intuitive,
           aesthetically pleasing, and functional designs that enhance user
-          experience and drive business success. Trust Hypework to bring your
+          experience and drive business success. Trust Hypeworx to bring your
           vision to life with creativity and precision.
         </p>
         <Link href="/works">

@@ -19,7 +19,7 @@ const Develop = () => {
         We design, <span className="text-[#1649FF]">develop</span> & brand
       </h2>
       <p>
-        In the realm of development, Hypework specializes in creating robust and
+        In the realm of development, Hypeworx specializes in creating robust and
         innovative digital solutions. Our services include web development,
         mobile app development, and custom software development, ensuring each
         product is tailored to meet the unique needs of our clients. From

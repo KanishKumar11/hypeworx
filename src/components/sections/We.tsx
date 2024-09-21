@@ -18,7 +18,7 @@ const We = () => {
         We <span className="text-[#FF4100]">design</span>, develop & brand
       </h2>
       <p>
-        In the realm of design, Hypework excels in creating visually stunning,
+        In the realm of design, Hypeworx excels in creating visually stunning,
         user-centric interfaces. Our services include UI/UX design, graphic
         design, and visual branding, ensuring every touchpoint reflects the
         brand&#39;s essence. From concept to execution, we focus on crafting
