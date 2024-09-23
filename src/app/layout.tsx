@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Hypeworx | An premium agency for design development & branding",
   description: "Launching your vision into a masterpiece, one pixel at a time",
+  openGraph: {
+    images: ["/meta.png"],
+  },
 };
 
 export default function RootLayout({

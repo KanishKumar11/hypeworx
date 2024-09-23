@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
         <div className="">
           <div className="lg:text-6xl text-4xl text-center my-10">
-            @Hypeworz{" "}
+            @Hypeworx{" "}
           </div>
           <div className="flex items-center justify-center gap-10">
             <Link href="#">
